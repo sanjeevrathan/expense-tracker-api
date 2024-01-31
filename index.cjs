@@ -3,10 +3,11 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const expenseModal = require('./model')
+const cors = require("cors");
 
-const app = express()
-app.use(express.static(__dirname))
-
+const app = express();
+app.use(express.static(__dirname));
+app.use(cors());
 app.use(bodyParser.json()) // bodyParser -> converts body to an understandable form
 
 mongoose
